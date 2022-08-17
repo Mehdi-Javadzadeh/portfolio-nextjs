@@ -7,6 +7,8 @@ import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { TbBrandJavascript } from "react-icons/tb";
+
 // import navLogo from "../public/assets/navLogo.png"
 
 const NavBar = () => {
@@ -33,23 +35,37 @@ const NavBar = () => {
 	return (
 		<div className={shadow ? "fixed w-full shadow-xl z-[100]" : "fixed w-full z-[100]"}>
 			<div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-				<Image src="/assets/navLogo.png" alt="/" width="125" height="50" />
+				<Link href="/">
+					<div className="cursor-pointer">
+						<TbBrandJavascript size={80} color="#666666" />
+					</div>
+				</Link>
 				<div>
-					<ul className="hidden md:flex">
+					<ul className="hidden md:flex space-x-[40px] items-center justify-center">
 						<Link href="/">
-							<li className="ml-10 text-sm uppercase hover:border-b">Home</li>
+							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								Home
+							</li>
 						</Link>
 						<Link href="/#about">
-							<li className="ml-10 text-sm uppercase hover:border-b">About</li>
+							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								About
+							</li>
 						</Link>
 						<Link href="/#skills">
-							<li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
+							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								Skills
+							</li>
 						</Link>
 						<Link href="/#projects">
-							<li className="ml-10 text-sm uppercase hover:border-b">Projects</li>
+							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								Projects
+							</li>
 						</Link>
 						<Link href="/#contact">
-							<li className="ml-10 text-sm uppercase hover:border-b">Contact</li>
+							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								Contact
+							</li>
 						</Link>
 					</ul>
 
@@ -73,7 +89,9 @@ const NavBar = () => {
 				>
 					<div>
 						<div className="w-full flex justify-between items-center">
-							<Image src="/assets/navLogo.png" width={87} height={35} alt="/" />
+							<Link href="/">
+								<TbBrandJavascript onClick={handleNav} color="#666666" size={75} />
+							</Link>
 							<div
 								onClick={handleNav}
 								className="rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer"
@@ -91,19 +109,29 @@ const NavBar = () => {
 					<div className="py-4 flex flex-col">
 						<ul className="uppercase">
 							<Link href="/">
-								<li className="py-4 text-sm">Home</li>
+								<li onClick={handleNav} className="py-4 text-sm">
+									Home
+								</li>
 							</Link>
-							<Link href="/">
-								<li className="py-4 text-sm">About</li>
+							<Link href="/#about">
+								<li onClick={handleNav} className="py-4 text-sm">
+									About
+								</li>
 							</Link>
-							<Link href="/">
-								<li className="py-4 text-sm">Skills</li>
+							<Link href="/#skills">
+								<li onClick={handleNav} className="py-4 text-sm">
+									Skills
+								</li>
 							</Link>
-							<Link href="/">
-								<li className="py-4 text-sm">Projects</li>
+							<Link href="/#projects">
+								<li onClick={handleNav} className="py-4 text-sm">
+									Projects
+								</li>
 							</Link>
-							<Link href="/">
-								<li className="py-4 text-sm">Contact</li>
+							<Link href="/#contact">
+								<li onClick={handleNav} className="py-4 text-sm">
+									Contact
+								</li>
 							</Link>
 						</ul>
 

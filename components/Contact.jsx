@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ContactImage from "../public/assets/contact.jpg";
@@ -8,10 +8,15 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 
 const Contact = () => {
+	const [isHovered, setIsHovered] = useState(false);
+
+	const handleHover = () => {
+		setIsHovered(true);
+	};
 	return (
 		<div id="contact" className="w-full lg:h-screen">
 			<div className="max-w-[1240px] w-full m-auto px-2 py-2">
-				<p className="text-xl tracking-widest uppercase texxt-[#5651e5]">Contact</p>
+				<p className="text-xl tracking-widest uppercase text-[#60a5fa]">Contact</p>
 				<h2 className="py-4">Get In Touch</h2>
 				<div className="grid lg:grid-cols-5 gap-8">
 					{/* Left */}
@@ -57,10 +62,12 @@ const Contact = () => {
 							<form>
 								<div className="grid md:grid-cols-2 gap-4 w-full my-2">
 									<div className="flex flex-col">
-										<label className="uppercase text-sm py-2">Name</label>
+										<label className="uppercase text-sm py-2">Full Name</label>
 										<input
 											className="border-2 rounded-lg p-3 flex border-gray-300"
 											type="text"
+											dir="auto"
+											placeholder="Mehdi Javadzadeh"
 										/>
 									</div>
 									<div className="flex flex-col">
@@ -68,6 +75,8 @@ const Contact = () => {
 										<input
 											className="border-2 rounded-lg p-3 flex border-gray-300"
 											type="text"
+											placeholder="09035708239"
+											dir="auto"
 										/>
 									</div>
 								</div>
@@ -76,6 +85,7 @@ const Contact = () => {
 									<input
 										className="border-2 rounded-lg p-3 flex border-gray-300"
 										type="email"
+										placeholder="mj.active2013@gmail.com"
 									/>
 								</div>
 								<div className="flex flex-col py-2">
@@ -83,17 +93,22 @@ const Contact = () => {
 									<input
 										className="border-2 rounded-lg p-3 flex border-gray-300"
 										type="text"
+										placeholder="Front-End Developer"
+										dir="auto"
 									/>
 								</div>
 								<div className="flex flex-col py-2">
 									<label className="uppercase text-sm py-2">Message</label>
 									<textarea
 										rows={10}
+										dir="auto"
 										className=" border-2 rounded-lg p-3 border-gray-300 resize-none"
 									></textarea>
 								</div>
 
-								<button className="w-full p-4 text-gray-100 mt-4">Send Message</button>
+								<button disabled className="w-full p-4 text-gray-100 mt-4">
+									Send Message
+								</button>
 							</form>
 						</div>
 					</div>
@@ -101,8 +116,19 @@ const Contact = () => {
 
 				<div className="flex justify-center items-center p-12">
 					<Link href="/">
-						<div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-							<HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
+						<div
+							onMouseEnter={handleHover}
+							onMouseLeave={() => setIsHovered(false)}
+							className="hover:bg-blue-400 rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
+						>
+							<HiOutlineChevronDoubleUp
+								className={
+									isHovered
+										? "text-white ease-in duration-500"
+										: " text-black/60 ease-in duration-500"
+								}
+								size={35}
+							/>
 						</div>
 					</Link>
 				</div>
@@ -112,12 +138,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-{
-	/* <div className="hover:bg-slate-400 rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-							<HiOutlineChevronDoubleUp
-								className="text-[#5651e5] hover:text-white ease-in duration-500"
-								size={30}
-							/>
-						</div> */
-}
