@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +8,7 @@ import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { TbBrandJavascript } from "react-icons/tb";
+import { useRouter } from "next/router";
 
 // import navLogo from "../public/assets/navLogo.png"
 
@@ -30,19 +31,21 @@ const NavBar = () => {
 		window.addEventListener("scroll", handeShadow);
 	}, []);
 
+	const myRouter = useRouter();
+
 	const { t } = useTranslation();
 
 	return (
 		<div className={shadow ? "fixed w-full shadow-xl z-[100]" : "fixed w-full z-[100]"}>
 			<div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-				<Link href="/">
-					<div className="cursor-pointer">
-						<TbBrandJavascript size={80} color="#666666" />
-					</div>
-				</Link>
+				{/* <Link href="/">
+				</Link> */}
+				<div onClick={() => myRouter.push("/")} className="cursor-pointer">
+					<TbBrandJavascript size={80} color="#666666" />
+				</div>
 				<div>
 					<ul className="hidden md:flex space-x-[40px] items-center justify-center">
-						<Link href="/">
+						<Link href="/#home">
 							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
 								Home
 							</li>
@@ -89,9 +92,11 @@ const NavBar = () => {
 				>
 					<div>
 						<div className="w-full flex justify-between items-center">
-							<Link href="/">
+							{/* <Link href="/">
+							</Link> */}
+							<div onClick={() => myRouter.push("/")}>
 								<TbBrandJavascript onClick={handleNav} color="#666666" size={75} />
-							</Link>
+							</div>
 							<div
 								onClick={handleNav}
 								className="rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer"
@@ -136,7 +141,7 @@ const NavBar = () => {
 						</ul>
 
 						<div className="pt-40">
-							<p className="uppercase tracking-wide text-[#5651e5]">Let's Connect</p>
+							<p className="uppercase tracking-wide text-[#60a5fa]">Let's Connect</p>
 							<div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
 								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
 									<FaLinkedinIn />
