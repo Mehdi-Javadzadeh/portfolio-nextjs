@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import propetyImg from "../public/assets/projects/property.jpg";
 import cryptoImg from "../public/assets/projects/crypto.jpg";
 import netflixImg from "../public/assets/projects/netflix.jpg";
 import twitchImg from "../public/assets/projects/twitch.jpg";
@@ -19,7 +18,7 @@ export async function getStaticProps({ locale }) {
 	};
 }
 
-const Property = () => {
+const Crypto = () => {
 	return (
 		<div className="w-full">
 			<div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -28,7 +27,7 @@ const Property = () => {
 					className="absolute z-1"
 					layout="fill"
 					objectFit="cover"
-					src={propetyImg}
+					src={cryptoImg}
 					alt="/"
 					priority
 				/>
@@ -97,4 +96,4 @@ const Property = () => {
 	);
 };
 
-export default Property;
+export default Crypto;

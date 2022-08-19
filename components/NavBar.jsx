@@ -37,12 +37,12 @@ const NavBar = () => {
 
 	return (
 		<div className={shadow ? "fixed w-full shadow-xl z-[100]" : "fixed w-full z-[100]"}>
-			<div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-				{/* <Link href="/">
-				</Link> */}
-				<div onClick={() => myRouter.push("/")} className="cursor-pointer">
-					<TbBrandJavascript size={80} color="#666666" />
-				</div>
+			<div className="flex justify-between items-center w-full h-full px-3 2xl:px-16">
+				<Link href="/#home">
+					<div className="cursor-pointer">
+						<TbBrandJavascript size={80} color="#666666" />
+					</div>
+				</Link>
 				<div>
 					<ul className="hidden md:flex space-x-[40px] items-center justify-center">
 						<Link href="/#home">
@@ -73,7 +73,7 @@ const NavBar = () => {
 					</ul>
 
 					<div onClick={handleNav} className="md:hidden cursor-pointer">
-						<AiOutlineMenu size={25} />
+						<AiOutlineMenu size={30} />
 					</div>
 				</div>
 			</div>

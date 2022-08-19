@@ -29,20 +29,20 @@ const Main = () => {
 						exceptional digital experiences. Currently, i'm foucsed on building responsive
 						fornd-end web applications while learning back-end technologies
 					</p>
-					<div className="flex items-center justify-between max-w-[410px] m-auto py-4 space-x-8">
+					<div className="flex items-center justify-around max-w-[370px] m-auto py-4 ">
 						<div
 							onClick={handlePopUp}
-							className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
+							className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300"
 						>
 							<FaLinkedinIn size={25} />
 						</div>
-						<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+						<div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
 							<FaGithub size={25} />
 						</div>
-						<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+						<div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
 							<AiOutlineMail size={25} />
 						</div>
-						<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+						<div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
 							<BsFillPersonLinesFill size={25} />
 						</div>
 					</div>

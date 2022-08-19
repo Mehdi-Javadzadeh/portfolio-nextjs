@@ -8,9 +8,7 @@ const Popup = () => {
 	const [isPopUp, setIsPopUp] = useAtom(isOpen);
 	return (
 		<div
-			className={
-				isPopUp ? "z-[100] fixed left-0 top-0 w-full h-screen bg-black/70" : null
-			}
+			className={isPopUp ? "z-[100] fixed left-0 top-0 w-full h-full bg-black/70" : null}
 		>
 			<div
 				className={
