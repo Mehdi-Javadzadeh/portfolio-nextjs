@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import cryptoImg from "../public/assets/projects/crypto.jpg";
-import netflixImg from "../public/assets/projects/netflix.jpg";
 import twitchImg from "../public/assets/projects/twitch.jpg";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { IoMdArrowBack } from "react-icons/io";
@@ -18,7 +16,7 @@ export async function getStaticProps({ locale }) {
 	};
 }
 
-const Crypto = () => {
+const Twitch = () => {
 	return (
 		<div className="w-full">
 			<div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -27,12 +25,12 @@ const Crypto = () => {
 					className="absolute z-1"
 					layout="fill"
 					objectFit="cover"
-					src={cryptoImg}
+					src={twitchImg}
 					alt="/"
 					priority
 				/>
 				<div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-					<h2 className="py-2">Crypto App</h2>
+					<h2 className="py-2">Twitch</h2>
 					<h3>React JS / Tailwind / Firebase</h3>
 				</div>
 			</div>
@@ -42,14 +40,12 @@ const Crypto = () => {
 					<p>Project</p>
 					<h2>OverView</h2>
 					<p>
-						I built this app to demonstrate knowledge working in React JS and accessing
-						API endpoints. This app was built using React JS and is hosted on Firebase.
-						This application supports user authentication using firebase. Users are able
-						to create a new account using their email address and can then sign in to save
-						coins to a user specific list. This is made possble by creating a firestore
-						cloud storage database at the time of user registration. Another feature of
-						this application is dynamic routing through the &quot;React Router DOM&quot;
-						package. This application was built using the Coin Gecko API.
+						This appplication was built using NEXT.JS and is styled with Tailwind CSS. The
+						application is hosted statically using Vercel. This is a mobile responsive
+						recreation of Twitch.tv and features Next/Auth.js for authentication. Users
+						may choose to be authenticated with either a Github account or a Google
+						account. A few features to note with this project are lazy loading images
+						using the Image component, built in routing, and Next/Auth Context.
 					</p>
 					<button className="px-8 py-2 mt-4 mr-8">Demo</button>
 					<button className="px-8 py-2 mt-4">Code</button>
@@ -97,4 +93,4 @@ const Crypto = () => {
 	);
 };
 
-export default Crypto;
+export default Twitch;

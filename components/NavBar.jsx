@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,11 +10,28 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { TbBrandJavascript } from "react-icons/tb";
 import { useRouter } from "next/router";
 
-// import navLogo from "../public/assets/navLogo.png"
-
 const NavBar = () => {
 	const [nav, setNav] = useState(false);
 	const [shadow, setShadow] = useState(false);
+	const [navBg, setNavBg] = useState("#ecf0f3");
+	const [linkColor, setLinkColor] = useState("#1f2937");
+
+	const myRouter = useRouter();
+
+	useEffect(() => {
+		if (
+			myRouter.asPath === "/property" ||
+			myRouter.asPath === "/crypto" ||
+			myRouter.asPath === "/netflix" ||
+			myRouter.asPath === "/twitch"
+		) {
+			setNavBg("transparent");
+			setLinkColor("#ecf0f3");
+		} else {
+			setNavBg("#ecf0f3");
+			setLinkColor("#1f2937");
+		}
+	}, [myRouter]);
 
 	const handleNav = () => {
 		setNav(!nav);
@@ -31,12 +48,13 @@ const NavBar = () => {
 		window.addEventListener("scroll", handeShadow);
 	}, []);
 
-	const myRouter = useRouter();
-
 	const { t } = useTranslation();
 
 	return (
-		<div className={shadow ? "fixed w-full shadow-xl z-[100]" : "fixed w-full z-[100]"}>
+		<div
+			style={{ backgroundColor: `${navBg}` }}
+			className={shadow ? "fixed w-full shadow-xl z-[100]" : "fixed w-full z-[100]"}
+		>
 			<div className="flex justify-between items-center w-full h-full px-3 2xl:px-16">
 				<Link href="/#home">
 					<div className="cursor-pointer">
@@ -44,7 +62,10 @@ const NavBar = () => {
 					</div>
 				</Link>
 				<div>
-					<ul className="hidden md:flex space-x-[40px] items-center justify-center">
+					<ul
+						style={{ color: `${linkColor}` }}
+						className="hidden md:flex space-x-[40px] items-center justify-center"
+					>
 						<Link href="/#home">
 							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
 								Home

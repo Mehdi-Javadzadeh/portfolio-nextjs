@@ -13,7 +13,7 @@ const Popup = () => {
 			<div
 				className={
 					isPopUp
-						? "z-[100] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-[75%] sm:w-[70%] lg:w-[40%] md:w-[60%] h-[45vh] bg-[#fff] p-10 ease-in duration-[730ms] rounded-2xl shadow-xl shadow-gray-800"
+						? "z-[100] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-[75%] sm:w-[70%] lg:w-[40%] md:w-[60%] h-[45vh] bg-[#ecf0f3] p-10 ease-in duration-[730ms] rounded-2xl shadow-xl shadow-gray-800"
 						: "fixed left-[-200%] bottom-0 w-[75%] sm:w-[70%] lg:w-[40%] md:w-[60%] h-[45vh] bg-[#fff] p-10 ease-in duration-[700ms] rounded-xl animate-ping"
 				}
 			>
