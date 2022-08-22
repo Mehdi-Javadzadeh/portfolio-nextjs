@@ -8,13 +8,32 @@ import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { TbBrandJavascript } from "react-icons/tb";
+import { MdLanguage } from "react-icons/md";
 import { useRouter } from "next/router";
+import { atom, useAtom } from "jotai";
+import LangPopup from "./LangPopup";
+
+// Mulitilingual Config
+export async function getStaticProps({ locale }) {
+	return {
+		props: {
+			...(await serverSideTranslations(locale, ["home", "common"])),
+		},
+	};
+}
+// Mulitilingual Config
+
+export const isOpen = atom(false);
 
 const NavBar = () => {
+	const [isPopUp, setIsPopUp] = useAtom(isOpen);
+
 	const [nav, setNav] = useState(false);
 	const [shadow, setShadow] = useState(false);
 	const [navBg, setNavBg] = useState("#ecf0f3");
 	const [linkColor, setLinkColor] = useState("#1f2937");
+	const [menuIconColor, setMenuIconColor] = useState("#1f2937");
+	const [langTextColor, setLangTextColor] = useState("#1f2937");
 
 	const myRouter = useRouter();
 
@@ -27,9 +46,13 @@ const NavBar = () => {
 		) {
 			setNavBg("transparent");
 			setLinkColor("#ecf0f3");
+			setMenuIconColor("#ecf0f3");
+			setLangTextColor("#ecf0f3");
 		} else {
 			setNavBg("#ecf0f3");
 			setLinkColor("#1f2937");
+			setMenuIconColor("#666666");
+			setLangTextColor("#1f2937");
 		}
 	}, [myRouter]);
 
@@ -50,15 +73,19 @@ const NavBar = () => {
 
 	const { t } = useTranslation();
 
+	const handlePopUp = () => {
+		setIsPopUp(!isPopUp);
+	};
+
 	return (
 		<div
 			style={{ backgroundColor: `${navBg}` }}
 			className={shadow ? "fixed w-full shadow-xl z-[100]" : "fixed w-full z-[100]"}
 		>
-			<div className="flex justify-between items-center w-full h-full px-3 2xl:px-16">
+			<div className="flex justify-between items-center w-full h-full px-7 2xl:px-16">
 				<Link href="/#home">
 					<div className="cursor-pointer">
-						<TbBrandJavascript size={80} color="#666666" />
+						<TbBrandJavascript size={80} color={menuIconColor} />
 					</div>
 				</Link>
 				<div>
@@ -68,7 +95,7 @@ const NavBar = () => {
 					>
 						<Link href="/#home">
 							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
-								Home
+								{t("home:home")}
 							</li>
 						</Link>
 						<Link href="/#about">
@@ -91,10 +118,16 @@ const NavBar = () => {
 								Contact
 							</li>
 						</Link>
+						<div
+							onClick={handlePopUp}
+							className="cursor-pointer hover:scale-110 ease-in duration-300 p-2 rounded-xl hover:bg-[#60a5fa]/30"
+						>
+							<MdLanguage size={25} color={langTextColor} />
+						</div>
 					</ul>
 
 					<div onClick={handleNav} className="md:hidden cursor-pointer">
-						<AiOutlineMenu size={30} />
+						<AiOutlineMenu size={30} color={menuIconColor} />
 					</div>
 				</div>
 			</div>
@@ -181,12 +214,9 @@ const NavBar = () => {
 					</div>
 				</div>
 			</div>
+			<LangPopup />
 		</div>
 	);
 };
 
 export default NavBar;
-
-{
-	/* <li className='ml-10 text-sm uppercase hover:border-b hover:bg-blue-400 rounded-full p-2 ease-in-out duration-500 hover:text-gray-100'>Home</li> */
-}
