@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
+import iranFlag from "../public/assets/iran.png";
+import ukFlag from "../public/assets/uk.png";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -33,7 +35,7 @@ const NavBar = () => {
 	const [navBg, setNavBg] = useState("#ecf0f3");
 	const [linkColor, setLinkColor] = useState("#1f2937");
 	const [menuIconColor, setMenuIconColor] = useState("#1f2937");
-	const [langTextColor, setLangTextColor] = useState("#1f2937");
+	const [isNotHome, setIsNotHome] = useState(false);
 
 	const myRouter = useRouter();
 
@@ -47,12 +49,12 @@ const NavBar = () => {
 			setNavBg("transparent");
 			setLinkColor("#ecf0f3");
 			setMenuIconColor("#ecf0f3");
-			setLangTextColor("#ecf0f3");
+			setIsNotHome(true);
 		} else {
 			setNavBg("#ecf0f3");
 			setLinkColor("#1f2937");
 			setMenuIconColor("#666666");
-			setLangTextColor("#1f2937");
+			setIsNotHome(false);
 		}
 	}, [myRouter]);
 
@@ -75,6 +77,16 @@ const NavBar = () => {
 
 	const handlePopUp = () => {
 		setIsPopUp(!isPopUp);
+	};
+
+	const handleUK = async () => {
+		await myRouter.push("/en");
+		setNav(!nav);
+	};
+
+	const handleFa = async () => {
+		await myRouter.push("/fa");
+		setNav(!nav);
 	};
 
 	return (
@@ -118,12 +130,14 @@ const NavBar = () => {
 								Contact
 							</li>
 						</Link>
-						<div
-							onClick={handlePopUp}
-							className="cursor-pointer hover:scale-110 ease-in duration-300 p-2 rounded-xl hover:bg-[#60a5fa]/30"
-						>
-							<MdLanguage size={25} color={langTextColor} />
-						</div>
+						{isNotHome ? null : (
+							<div
+								onClick={handlePopUp}
+								className="cursor-pointer hover:scale-110 ease-in duration-300 p-2 rounded-xl hover:bg-[#60a5fa]/30"
+							>
+								<MdLanguage size={25} color={"1f2937"} />
+							</div>
+						)}
 					</ul>
 
 					<div onClick={handleNav} className="md:hidden cursor-pointer">
@@ -192,9 +206,44 @@ const NavBar = () => {
 									Contact
 								</li>
 							</Link>
+							<li>
+								{isNotHome ? null : (
+									<div className="flex flex-col justify-start items-start space-y-5 pt-2">
+										<div
+											onClick={handleUK}
+											className="flex flex-col justify-center items-center"
+										>
+											<Image
+												layout="fixed"
+												className="rounded-full"
+												width={45}
+												height={45}
+												priority
+												src={ukFlag}
+											/>
+											<p className="text-[11px] text-center">English</p>
+										</div>
+
+										<div
+											onClick={handleFa}
+											className="flex flex-col justify-center items-center"
+										>
+											<Image
+												layout="fixed"
+												className="rounded-full"
+												width={45}
+												height={45}
+												priority
+												src={iranFlag}
+											/>
+											<p className="text-[13px] text-center">فارسی</p>
+										</div>
+									</div>
+								)}
+							</li>
 						</ul>
 
-						<div className="pt-40">
+						<div style={isNotHome ? { paddingTop: 160 } : { paddingTop: 64 }}>
 							<p className="uppercase tracking-wide text-[#60a5fa]">Let's Connect</p>
 							<div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
 								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
