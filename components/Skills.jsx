@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import reactImg from "../public/assets/skills/React.png";
+import reactImg from "../public/assets/skills/react.png";
 
 const Skills = () => {
 	return (
