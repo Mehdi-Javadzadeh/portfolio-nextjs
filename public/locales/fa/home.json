@@ -1,4 +1,8 @@
 {
 	"language": "English",
-	"home": "خانه"
+	"home": "خانه",
+	"about": "درباره",
+	"skills": "مهارت ها",
+	"projects": "پروژه ها",
+	"contact": "تماس"
 }

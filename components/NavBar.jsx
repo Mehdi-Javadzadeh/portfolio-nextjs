@@ -79,14 +79,14 @@ const NavBar = () => {
 		setIsPopUp(!isPopUp);
 	};
 
-	const handleUK = async () => {
-		await myRouter.push("/en");
+	const handleUK = () => {
 		setNav(!nav);
+		myRouter.push("/en");
 	};
 
-	const handleFa = async () => {
-		await myRouter.push("/fa");
+	const handleFa = () => {
 		setNav(!nav);
+		myRouter.push("/fa");
 	};
 
 	return (
@@ -103,39 +103,39 @@ const NavBar = () => {
 				<div>
 					<ul
 						style={{ color: `${linkColor}` }}
-						className="hidden md:flex space-x-[40px] items-center justify-center"
+						className="hidden md:flex space-x-[38px] items-center justify-center"
 					>
 						<Link href="/#home">
-							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+							<li className="ml-10 text-base uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
 								{t("home:home")}
 							</li>
 						</Link>
 						<Link href="/#about">
-							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
-								About
+							<li className="ml-10 text-base uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								{t("home:about")}
 							</li>
 						</Link>
 						<Link href="/#skills">
-							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
-								Skills
+							<li className="ml-10 text-base uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								{t("home:skills")}
 							</li>
 						</Link>
 						<Link href="/#projects">
-							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
-								Projects
+							<li className="ml-10 text-base uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								{t("home:projects")}
 							</li>
 						</Link>
 						<Link href="/#contact">
-							<li className="ml-10 text-sm uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
-								Contact
+							<li className="ml-10 text-base  uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+								{t("home:contact")}
 							</li>
 						</Link>
 						{isNotHome ? null : (
 							<div
 								onClick={handlePopUp}
-								className="cursor-pointer hover:scale-110 ease-in duration-300 p-2 rounded-xl hover:bg-[#60a5fa]/30"
+								className="cursor-pointer hover:scale-110 ease-in duration-300 p-2 rounded-xl hover:bg-[#60a5fa]/30 space-x-4"
 							>
-								<MdLanguage size={25} color={"1f2937"} />
+								<MdLanguage size={25} color={"#1f2937"} />
 							</div>
 						)}
 					</ul>
@@ -246,18 +246,32 @@ const NavBar = () => {
 						<div style={isNotHome ? { paddingTop: 160 } : { paddingTop: 64 }}>
 							<p className="uppercase tracking-wide text-[#60a5fa]">Let's Connect</p>
 							<div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-									<FaLinkedinIn />
-								</div>
-								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-									<FaGithub />
-								</div>
-								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-									<AiOutlineMail />
-								</div>
-								<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-									<BsFillPersonLinesFill />
-								</div>
+								<a href="https://google.com" target="_blank" rel="noreferrer">
+									<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+										<FaLinkedinIn />
+									</div>
+								</a>
+								<a href="https://google.com" target="_blank" rel="noreferrer">
+									<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+										<FaGithub />
+									</div>
+								</a>
+								<a href="/#contact">
+									<div
+										onClick={() => setNav(!nav)}
+										className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+									>
+										<AiOutlineMail />
+									</div>
+								</a>
+								<a href="/#contact">
+									<div
+										onClick={() => setNav(!nav)}
+										className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+									>
+										<BsFillPersonLinesFill />
+									</div>
+								</a>
 							</div>
 						</div>
 					</div>
