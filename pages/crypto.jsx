@@ -3,9 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import cryptoImg from "../public/assets/projects/crypto.jpg";
-import netflixImg from "../public/assets/projects/netflix.jpg";
-import twitchImg from "../public/assets/projects/twitch.jpg";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { IoMdArrowBack } from "react-icons/io";
 
@@ -27,7 +24,7 @@ const Crypto = () => {
 					className="absolute z-1"
 					layout="fill"
 					objectFit="cover"
-					src={cryptoImg}
+					src="/assets/projects/crypto.jpg"
 					alt="/"
 					priority
 				/>

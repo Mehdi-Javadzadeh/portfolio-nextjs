@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import propetyImg from "../public/assets/projects/property.jpg";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { IoMdArrowBack } from "react-icons/io";
 
@@ -25,7 +24,7 @@ const Property = () => {
 					className="absolute z-1"
 					layout="fill"
 					objectFit="cover"
-					src={propetyImg}
+					src="/assets/projects/property.jpg"
 					alt="/"
 					priority
 				/>

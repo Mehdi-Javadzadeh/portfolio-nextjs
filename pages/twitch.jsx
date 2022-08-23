@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import twitchImg from "../public/assets/projects/twitch.jpg";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { IoMdArrowBack } from "react-icons/io";
 
@@ -25,7 +24,7 @@ const Twitch = () => {
 					className="absolute z-1"
 					layout="fill"
 					objectFit="cover"
-					src={twitchImg}
+					src="/assets/projects/twitch.jpg"
 					alt="/"
 					priority
 				/>
