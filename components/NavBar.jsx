@@ -46,7 +46,7 @@ const NavBar = () => {
 			myRouter.asPath === "/netflix" ||
 			myRouter.asPath === "/twitch"
 		) {
-			setNavBg("transparent");
+			setNavBg("rgba(000, 000, 000, 0.5)");
 			setLinkColor("#ecf0f3");
 			setMenuIconColor("#ecf0f3");
 			setIsNotHome(true);

@@ -19,7 +19,7 @@ const Netflix = () => {
 	return (
 		<div className="w-full">
 			<div className="w-screen h-[30vh] lg:h-[40vh] relative">
-				<div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
+				<div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/70 z-10" />
 				<Image
 					className="absolute z-1"
 					layout="fill"
@@ -54,28 +54,28 @@ const Netflix = () => {
 					<div className="sm:flex sm:flex-col">
 						<p className="text-center font-bold py-4">Technologies</p>
 						<div className="sm:flex sm:justify-around md:flex md:flex-col grid grid-cols-3 sm:gap-2 lg:ml-10">
-							<p className="text-gray-600 py-2 flex items-center">
-								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-2" />
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-1" />
 								React
 							</p>
-							<p className="text-gray-600 py-2 flex items-center">
-								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-2" />
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-1" />
 								Tailwind CSS
 							</p>
-							<p className="text-gray-600 py-2 flex items-center">
-								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-2" />
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-1" />
 								Javascript
 							</p>
-							<p className="text-gray-600 py-2 flex items-center">
-								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-2" />
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-1" />
 								Firebase
 							</p>
-							<p className="text-gray-600 py-2 flex items-center">
-								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-2" />
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-1" />
 								Zillow API
 							</p>
-							<p className="text-gray-600 py-2 flex items-center">
-								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-2" />
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#60a5fa" className="mr-1" />
 								Google API
 							</p>
 						</div>
