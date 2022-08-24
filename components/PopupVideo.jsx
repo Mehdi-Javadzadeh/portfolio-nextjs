@@ -1,15 +1,11 @@
 import React from "react";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useAtom } from "jotai";
 import { isOpen } from "../pages/property";
-import ReactPlayer from "react-player";
 import { useState } from "react";
 
 const PopupVideo = () => {
 	const [isPopUp, setIsPopUp] = useAtom(isOpen);
-
-	const [isPlaying, setIsPlaying] = useState(true);
 
 	const handleClose = () => {
 		setIsPopUp(!isPopUp);
@@ -24,7 +20,7 @@ const PopupVideo = () => {
 				className={
 					isPopUp
 						? " z-[200] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-[90%] sm:w-[80%] lg:w-[60%] md:w-[70%] h-max bg-[#ecf0f3] p-6 ease-in duration-[730ms] rounded-2xl shadow-xl shadow-gray-800"
-						: "z-[200] fixed left-[-200%] bottom-0 w-[90%] sm:w-[80%] lg:w-[60%] md:w-[70%] h-max bg-[#fff] p-6 ease-in duration-[850ms] rounded-xl"
+						: "z-[200] fixed left-[-200%] bottom-0 w-[90%] sm:w-[80%] lg:w-[60%] md:w-[70%] h-max bg-[#fff] p-6 ease-in duration-[1000ms] rounded-xl"
 				}
 			>
 				<div className="w-full h-full flex flex-col items-center justify-center relative gap-5">
@@ -35,21 +31,23 @@ const PopupVideo = () => {
 						</div>
 					</div>
 					<div className="w-full h-full ">
-						<iframe
-							className="w-full rounded-xl h-[450px]"
-							// style={{ borderRadius: 16, height: 350 }}
-							src="https://www.aparat.com/video/video/embed/videohash/orq0j/vt/frame"
-							allowFullScreen={true}
-							webkitallowfullscreen="true"
-							mozallowfullscreen="true"
-						></iframe>
-
-						{/* <ReactPlayer
-							controls={true}
-							url="https://www.aparat.com/v/orq0j"
-							light="/assets/projects/property.jpg"
-							playing={isPlaying}
-						/> */}
+						{isPopUp ? (
+							<iframe
+								className="w-full rounded-xl h-[450px]"
+								src="https://www.aparat.com/video/video/embed/videohash/orq0j/vt/frame"
+								allowFullScreen={true}
+								webkitallowfullscreen="true"
+								mozallowfullscreen="true"
+							></iframe>
+						) : (
+							<iframe
+								className="w-full rounded-xl h-[450px]"
+								src=""
+								allowFullScreen={true}
+								webkitallowfullscreen="true"
+								mozallowfullscreen="true"
+							></iframe>
+						)}
 					</div>
 				</div>
 			</div>
@@ -58,3 +56,5 @@ const PopupVideo = () => {
 };
 
 export default PopupVideo;
+
+// {isPopUp ? <Video /> : null}
