@@ -5,6 +5,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { IoMdArrowBack } from "react-icons/io";
+import { atom, useAtom } from "jotai";
+import PopupVideo from "../components/PopupVideo";
 
 // Multilingual Config
 export async function getStaticProps({ locale }) {
@@ -15,11 +17,18 @@ export async function getStaticProps({ locale }) {
 	};
 }
 
+export const isOpen = atom(false);
+
 const Property = () => {
+	const [isPopUp, setIsPopUp] = useAtom(isOpen);
+
+	const handlePopupVideo = () => {
+		setIsPopUp(!isPopUp);
+	};
 	return (
 		<div className="w-full">
 			<div className="w-screen h-[30vh] lg:h-[40vh] relative">
-				<div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
+				<div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/70 z-10" />
 				<Image
 					className="absolute z-1"
 					layout="fill"
@@ -47,7 +56,9 @@ const Property = () => {
 						signin to your account with an email address in order to save your favorite
 						properties. This is made possible with Zillow API.
 					</p>
-					<button className="px-8 py-2 mt-4 mr-8">Demo</button>
+					<button onClick={handlePopupVideo} className="px-8 py-2 mt-4 mr-8">
+						Demo
+					</button>
 					<button className="px-8 py-2 mt-4">Code</button>
 				</div>
 
@@ -89,6 +100,7 @@ const Property = () => {
 					</button>
 				</Link>
 			</div>
+			<PopupVideo />
 		</div>
 	);
 };

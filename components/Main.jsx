@@ -3,24 +3,17 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { atom, useAtom } from "jotai";
-import PopupGitHub from "./PopupGitHub";
-import PopupLinkedIn from "./PopupLinkedIn";
-import { useState } from "react";
-import Link from "next/link";
+import PopupVideo from "./PopupVideo";
 
 export const isOpen = atom(false);
-export const isLinkedinOpen = atom(false);
 
 const Main = () => {
 	const [isPopUp, setIsPopUp] = useAtom(isOpen);
-	const [isPopUpLinkedin, setIsLinkedin] = useAtom(isLinkedinOpen);
 
-	const handlePopUpGitHub = () => {
+	const handlePopupVideo = () => {
 		setIsPopUp(!isPopUp);
 	};
-	const handlePopUpLinkedIn = () => {
-		setIsLinkedin(!isPopUpLinkedin);
-	};
+
 	return (
 		<div id="home" className="w-full h-screen text-center relative z-100">
 			<div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center ">
