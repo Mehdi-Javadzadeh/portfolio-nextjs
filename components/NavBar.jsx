@@ -208,7 +208,7 @@ const NavBar = () => {
 							</Link>
 							<li>
 								{isNotHome ? null : (
-									<div className="flex flex-row justify-start items-center space-x-8">
+									<div className="flex flex-row justify-start items-center space-x-8 pt-2">
 										<div
 											onClick={handleUK}
 											className="felx flex-col items-center justify-center"
@@ -242,38 +242,6 @@ const NavBar = () => {
 								)}
 							</li>
 						</ul>
-
-						<div style={isNotHome ? { paddingTop: 60 } : { paddingTop: 15 }}>
-							<p className="uppercase tracking-wide text-[#60a5fa]">Let's Connect</p>
-							<div className="flex items-center justify-between my-2 w-full sm:w-[80%]">
-								<a href="https://google.com" target="_blank" rel="noreferrer">
-									<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-										<FaLinkedinIn />
-									</div>
-								</a>
-								<a href="https://google.com" target="_blank" rel="noreferrer">
-									<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-										<FaGithub />
-									</div>
-								</a>
-								<a href="/#contact">
-									<div
-										onClick={() => setNav(!nav)}
-										className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
-									>
-										<AiOutlineMail />
-									</div>
-								</a>
-								<a href="/#contact">
-									<div
-										onClick={() => setNav(!nav)}
-										className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
-									>
-										<BsFillPersonLinesFill />
-									</div>
-								</a>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
