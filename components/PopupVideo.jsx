@@ -20,7 +20,7 @@ const PopupVideo = () => {
 				className={
 					isPopUp
 						? " z-[200] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-[90%] sm:w-[80%] lg:w-[60%] md:w-[70%] h-max bg-[#ecf0f3] p-6 ease-in duration-[850ms] rounded-2xl shadow-xl shadow-gray-800"
-						: "z-[200] fixed left-[-200%] bottom-0 w-[90%] sm:w-[80%] lg:w-[60%] md:w-[70%] h-max bg-[#fff] p-6 ease-in duration-[900ms] rounded-xl opacity-50"
+						: "z-[200] fixed left-[-200%] bottom-0 w-[90%] sm:w-[80%] lg:w-[60%] md:w-[70%] h-max bg-[#fff] p-6 ease-in duration-[900ms] rounded-xl opacity-50 animate-ping"
 				}
 			>
 				<div className="w-full h-full flex flex-col items-center justify-center relative gap-5">
