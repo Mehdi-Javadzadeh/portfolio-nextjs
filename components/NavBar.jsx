@@ -154,8 +154,8 @@ const NavBar = () => {
 				<div
 					className={
 						nav
-							? "md:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
-							: "fixed left-[-100%] top-0 p-10 ease-in duration-500"
+							? "md:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 pb-0 ease-in duration-500"
+							: "fixed left-[-200%] top-0 p-10 ease-in duration-500"
 					}
 				>
 					<div>
@@ -179,7 +179,7 @@ const NavBar = () => {
 							</p>
 						</div>
 					</div>
-					<div className="py-4 flex flex-col">
+					<div className="py-2 flex flex-col">
 						<ul className="uppercase">
 							<Link href="/">
 								<li onClick={handleNav} className="py-4 text-sm">
@@ -208,10 +208,10 @@ const NavBar = () => {
 							</Link>
 							<li>
 								{isNotHome ? null : (
-									<div className="flex flex-col justify-start items-start space-y-5 pt-2">
+									<div className="flex flex-row justify-start items-center space-x-8">
 										<div
 											onClick={handleUK}
-											className="flex flex-col justify-center items-center"
+											className="felx flex-col items-center justify-center"
 										>
 											<Image
 												layout="fixed"
@@ -219,14 +219,14 @@ const NavBar = () => {
 												width={45}
 												height={45}
 												priority
-												src={ukFlag}
+												src={"/assets/uk.png"}
 											/>
 											<p className="text-[11px] text-center">English</p>
 										</div>
 
 										<div
 											onClick={handleFa}
-											className="flex flex-col justify-center items-center"
+											className="felx flex-col items-center justify-center"
 										>
 											<Image
 												layout="fixed"
@@ -234,18 +234,18 @@ const NavBar = () => {
 												width={45}
 												height={45}
 												priority
-												src={iranFlag}
+												src={"/assets/iran.png"}
 											/>
-											<p className="text-[13px] text-center">فارسی</p>
+											<p className="text-[12px] text-center">فارسی</p>
 										</div>
 									</div>
 								)}
 							</li>
 						</ul>
 
-						<div style={isNotHome ? { paddingTop: 160 } : { paddingTop: 64 }}>
+						<div style={isNotHome ? { paddingTop: 60 } : { paddingTop: 15 }}>
 							<p className="uppercase tracking-wide text-[#60a5fa]">Let's Connect</p>
-							<div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
+							<div className="flex items-center justify-between my-2 w-full sm:w-[80%]">
 								<a href="https://google.com" target="_blank" rel="noreferrer">
 									<div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
 										<FaLinkedinIn />
