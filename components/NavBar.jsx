@@ -36,12 +36,13 @@ const NavBar = () => {
 	const [linkColor, setLinkColor] = useState("#1f2937");
 	const [menuIconColor, setMenuIconColor] = useState("#1f2937");
 	const [isNotHome, setIsNotHome] = useState(false);
+	const [hoverBg, setHoverBg] = useState("hover:bg-[#60a5fa]");
 
 	const myRouter = useRouter();
 
 	useEffect(() => {
 		if (
-			myRouter.asPath === "/property" ||
+			myRouter.asPath === "/samex" ||
 			myRouter.asPath === "/crypto" ||
 			myRouter.asPath === "/netflix" ||
 			myRouter.asPath === "/twitch"
@@ -51,10 +52,18 @@ const NavBar = () => {
 			setMenuIconColor("#ecf0f3");
 			setIsNotHome(true);
 		} else {
-			setNavBg("#ecf0f3");
+			setNavBg("#fff");
 			setLinkColor("#1f2937");
 			setMenuIconColor("#666666");
 			setIsNotHome(false);
+		}
+	}, [myRouter]);
+
+	useEffect(() => {
+		if (myRouter.asPath === "/samex") {
+			setHoverBg("hover:bg-[#FDB905]");
+		} else {
+			setHoverBg("hover:bg-[#60a5fa]");
 		}
 	}, [myRouter]);
 
@@ -106,27 +115,37 @@ const NavBar = () => {
 						className="hidden md:flex space-x-[38px] items-center justify-center"
 					>
 						<Link href="/#home">
-							<li className="ml-10 text-base uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+							<li
+								className={`ml-10 text-base uppercase p-3 ${hoverBg} rounded-full ease-in duration-300 hover:text-white`}
+							>
 								{t("home:home")}
 							</li>
 						</Link>
 						<Link href="/#about">
-							<li className="ml-10 text-base uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+							<li
+								className={`ml-10 text-base uppercase p-3 ${hoverBg} rounded-full ease-in duration-300 hover:text-white`}
+							>
 								{t("home:about")}
 							</li>
 						</Link>
 						<Link href="/#skills">
-							<li className="ml-10 text-base uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+							<li
+								className={`ml-10 text-base uppercase p-3 ${hoverBg} rounded-full ease-in duration-300 hover:text-white`}
+							>
 								{t("home:skills")}
 							</li>
 						</Link>
 						<Link href="/#projects">
-							<li className="ml-10 text-base uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+							<li
+								className={`ml-10 text-base uppercase p-3 ${hoverBg} rounded-full ease-in duration-300 hover:text-white`}
+							>
 								{t("home:projects")}
 							</li>
 						</Link>
 						<Link href="/#contact">
-							<li className="ml-10 text-base  uppercase p-3 hover:bg-[#60a5fa] rounded-full ease-in duration-300 hover:text-white">
+							<li
+								className={`ml-10 text-base  uppercase p-3 ${hoverBg} rounded-full ease-in duration-300 hover:text-whit`}
+							>
 								{t("home:contact")}
 							</li>
 						</Link>
@@ -154,7 +173,7 @@ const NavBar = () => {
 				<div
 					className={
 						nav
-							? "md:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10  ease-in duration-500"
+							? "md:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#fff] p-10  ease-in duration-500"
 							: "fixed left-[-200%] top-0 p-10 ease-in duration-500"
 					}
 				>
@@ -167,7 +186,7 @@ const NavBar = () => {
 							</div>
 							<div
 								onClick={handleNav}
-								className="rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer"
+								className="rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer bg-[#fff]"
 							>
 								<AiOutlineClose size={25} />
 							</div>
