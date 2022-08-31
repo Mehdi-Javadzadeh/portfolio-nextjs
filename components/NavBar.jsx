@@ -4,11 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
-import iranFlag from "../public/assets/iran.png";
-import ukFlag from "../public/assets/uk.png";
-import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { TbBrandJavascript } from "react-icons/tb";
 import { MdLanguage } from "react-icons/md";
 import { useRouter } from "next/router";
@@ -82,8 +78,6 @@ const NavBar = () => {
 		window.addEventListener("scroll", handeShadow);
 	}, []);
 
-	const { t } = useTranslation();
-
 	const handlePopUp = () => {
 		setIsPopUp(!isPopUp);
 	};
@@ -97,6 +91,8 @@ const NavBar = () => {
 		setNav(!nav);
 		myRouter.push("/fa");
 	};
+
+	const { t } = useTranslation();
 
 	return (
 		<div
@@ -193,36 +189,34 @@ const NavBar = () => {
 						</div>
 
 						<div className="border-b border-gray-300 my-4">
-							<p className="w-[85%] md:w-[90%] py-4">
-								Let's build something legendary together
-							</p>
+							<p className="w-[85%] md:w-[90%] py-4">{t("home:headerTitle")}</p>
 						</div>
 					</div>
 					<div className="py-2 flex flex-col">
 						<ul className="uppercase">
 							<Link href="/">
 								<li onClick={handleNav} className="py-4 text-sm">
-									Home
+									{t("home:home")}
 								</li>
 							</Link>
 							<Link href="/#about">
 								<li onClick={handleNav} className="py-4 text-sm">
-									About
+									{t("home:about")}
 								</li>
 							</Link>
 							<Link href="/#skills">
 								<li onClick={handleNav} className="py-4 text-sm">
-									Skills
+									{t("home:skills")}
 								</li>
 							</Link>
 							<Link href="/#projects">
 								<li onClick={handleNav} className="py-4 text-sm">
-									Projects
+									{t("home:projects")}
 								</li>
 							</Link>
 							<Link href="/#contact">
 								<li onClick={handleNav} className="py-4 text-sm">
-									Contact
+									{t("home:contact")}
 								</li>
 							</Link>
 							<li>

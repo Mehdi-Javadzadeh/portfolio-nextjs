@@ -42,6 +42,7 @@ const PopupVideo = () => {
 						) : (
 							<iframe
 								className="w-full rounded-xl h-[450px]"
+								src={null}
 								allowFullScreen={true}
 								webkitallowfullscreen="true"
 								mozallowfullscreen="true"

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import React from "react";
 import ProjectItem from "./ProjectItem";
 import propetyImg from "../public/assets/projects/property.jpg";
@@ -10,11 +11,16 @@ import samexImg from "../public/assets/projects/samex.png";
 import { ImStarFull } from "react-icons/im";
 
 const Projects = () => {
+	const { t } = useTranslation();
 	return (
 		<div id="projects" className="w-full">
 			<div className="max-w-[1240px] mx-auto px-2 py-16">
-				<p className="text-xl tracking-widest uppercase text-[#60a5fa]">Projects</p>
-				<h2 className="py-4">What I've Built</h2>
+				<p dir="auto" className="text-xl tracking-wide uppercase text-[#60a5fa]">
+					{t("home:projects")}
+				</p>
+				<h2 dir="auto" className="py-8">
+					{t("home:WhatBuilt")}
+				</h2>
 				<div className="grid md:grid-cols-2 gap-8">
 					<ProjectItem
 						title="SamEx"
