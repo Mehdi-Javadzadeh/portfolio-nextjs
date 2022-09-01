@@ -27,6 +27,8 @@ const Samex = () => {
 	const handlePopupVideo = () => {
 		setIsPopUp(!isPopUp);
 	};
+
+	const { t } = useTranslation();
 	return (
 		<div className="w-full">
 			<div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -112,8 +114,8 @@ const Samex = () => {
 
 				<Link href="/#projects">
 					<div className="py-10">
-						<button className="bg-gradient-to-r from-gray-700 to-gray-500 w-[90px] py-2 px-3 flex items-center justify-between text-center hover:animate-bounce">
-							<IoMdArrowBack size={18} /> Back
+						<button className="bg-gradient-to-r from-gray-700 to-gray-500 w-[90px] py-2 px-1 flex items-center justify-around text-center hover:animate-bounce">
+							<IoMdArrowBack size={18} /> {t("home:back")}
 						</button>
 					</div>
 				</Link>
