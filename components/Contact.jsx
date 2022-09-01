@@ -3,12 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import ContactImage from "../public/assets/contact.jpg";
-import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import { atom, useAtom } from "jotai";
+import EmailPopupC from "./EmailPopupC";
+import PhonePopupC from "./PhonePopupC";
+
+export const isMailOpen = atom(false);
+export const isPhoneOpen = atom(false);
 
 const Contact = () => {
+	const [isPopUp, setIsPopUp] = useAtom(isMailOpen);
+	const [isPhonePopUp, setIsPhonePopUp] = useAtom(isPhoneOpen);
+
+	const handlePopupEmail = () => {
+		setIsPopUp(!isPopUp);
+	};
+	const handlePopupPhone = () => {
+		setIsPhonePopUp(!isPhonePopUp);
+	};
+
 	const [isHovered, setIsHovered] = useState(false);
 
 	const handleHover = () => {
@@ -46,26 +62,38 @@ const Contact = () => {
 									{t("home:getInTouch")}
 								</p>
 								<div className="flex items-center justify-between py-4">
-									<a href="https://google.com" target="_blank" rel="noreferrer">
+									<a
+										href="https://www.linkedin.com/in/mehdi-javadzadeh/"
+										target="_blank"
+										rel="noreferrer"
+									>
 										<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
 											<FaLinkedinIn />
 										</div>
 									</a>
-									<a href="https://google.com" target="_blank" rel="noreferrer">
+									<a
+										href="https://github.com/Mehdi-Javadzadeh?tab=repositories"
+										target="_blank"
+										rel="noreferrer"
+									>
 										<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
 											<FaGithub />
 										</div>
 									</a>
-									<a href="/#contact">
-										<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-											<AiOutlineMail />
-										</div>
-									</a>
-									<a href="/#contact">
-										<div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-											<BsFillPersonLinesFill />
-										</div>
-									</a>
+
+									<div
+										onClick={handlePopupEmail}
+										className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
+									>
+										<AiOutlineMail />
+									</div>
+
+									<div
+										onClick={handlePopupPhone}
+										className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
+									>
+										<BsFillPersonLinesFill />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -155,6 +183,8 @@ const Contact = () => {
 					</Link>
 				</div>
 			</div>
+			<EmailPopupC />
+			<PhonePopupC />
 		</div>
 	);
 };

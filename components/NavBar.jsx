@@ -140,7 +140,7 @@ const NavBar = () => {
 						</Link>
 						<Link href="/#contact">
 							<li
-								className={`ml-10 text-base  uppercase p-3 ${hoverBg} rounded-full ease-in duration-300 hover:text-whit`}
+								className={`ml-10 text-base  uppercase p-3 ${hoverBg} rounded-full ease-in duration-300 hover:text-white`}
 							>
 								{t("home:contact")}
 							</li>
