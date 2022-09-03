@@ -3,8 +3,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import React from "react";
 import ProjectItem from "./ProjectItem";
-import propetyImg from "../public/assets/projects/property.jpg";
-import cryptoImg from "../public/assets/projects/crypto.jpg";
+import deliverooImg from "../public/assets/projects/deliveroo.png";
 import netflixImg from "../public/assets/projects/netflix.jpg";
 import twitchImg from "../public/assets/projects/twitch.jpg";
 import samexImg from "../public/assets/projects/samex.png";
@@ -39,12 +38,12 @@ const Projects = () => {
 						}
 					/>
 					<ProjectItem
-						title="Crypto App"
-						Technology="React Native"
-						backgroundImage={cryptoImg}
-						projectUrl="/crypto"
-						bgColor1={"from-[#FDB905]"}
-						bgColor2={"to-[#ffe18f]"}
+						title="Deliveroo-Clone"
+						Technology="React Native(Expo)"
+						backgroundImage={deliverooImg}
+						projectUrl="/deliveroo"
+						bgColor1={"from-[#00ccbb]"}
+						bgColor2={"to-[#91c7c2]"}
 					/>
 					<ProjectItem
 						title="Netflix"

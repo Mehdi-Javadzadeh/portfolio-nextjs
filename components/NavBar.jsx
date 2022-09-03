@@ -39,7 +39,7 @@ const NavBar = () => {
 	useEffect(() => {
 		if (
 			myRouter.asPath === "/samex" ||
-			myRouter.asPath === "/crypto" ||
+			myRouter.asPath === "/deliveroo" ||
 			myRouter.asPath === "/netflix" ||
 			myRouter.asPath === "/twitch"
 		) {
@@ -58,8 +58,8 @@ const NavBar = () => {
 	useEffect(() => {
 		if (myRouter.asPath === "/samex") {
 			setHoverBg("hover:bg-[#FDB905]");
-		} else {
-			setHoverBg("hover:bg-[#60a5fa]");
+		} else if (myRouter.asPath === "/deliveroo") {
+			setHoverBg("hover:bg-[#00ccbb]");
 		}
 	}, [myRouter]);
 

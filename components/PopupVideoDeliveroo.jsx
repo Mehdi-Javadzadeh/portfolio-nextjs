@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAtom } from "jotai";
-import { isOpen } from "../pages/samex";
+import { isOpen } from "../pages/deliveroo";
 
 const PopupVideo = () => {
 	const [isPopUp, setIsPopUp] = useAtom(isOpen);
@@ -25,7 +25,7 @@ const PopupVideo = () => {
 				<div className="w-full h-full flex flex-col items-center justify-center relative gap-5">
 					<div className="w-full flex items-center justify-between pl-10">
 						<p className="text-base">Application Flow Video:</p>
-						<div className="cursor-pointer p-2 bg-[#FDB905]/60 rounded-full ease-in duration-300">
+						<div className="cursor-pointer p-2 bg-[#00ccbb]/60 rounded-full ease-in duration-300">
 							<AiOutlineClose onClick={handleClose} size={30} color="#fff" />
 						</div>
 					</div>
@@ -33,7 +33,7 @@ const PopupVideo = () => {
 						{isPopUp ? (
 							<iframe
 								className="w-full rounded-xl h-[450px]"
-								src="https://www.aparat.com/video/video/embed/videohash/605UG/vt/frame?startTime=0"
+								src="https://www.aparat.com/video/video/embed/videohash/ErS6x/vt/frame?startTime=0"
 								allowFullScreen={true}
 								webkitallowfullscreen="true"
 								mozallowfullscreen="true"
@@ -41,6 +41,7 @@ const PopupVideo = () => {
 						) : (
 							<iframe
 								className="w-full rounded-xl h-[450px]"
+								src={null}
 								allowFullScreen={true}
 								webkitallowfullscreen="true"
 								mozallowfullscreen="true"

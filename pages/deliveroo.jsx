@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { IoMdArrowBack } from "react-icons/io";
 import { atom, useAtom } from "jotai";
-import PopupVideo from "../components/PopupVideo";
+import PopupVideoDeliveroo from "../components/PopupVideoDeliveroo";
 import { FaGithub } from "react-icons/fa";
 import { MdSlowMotionVideo } from "react-icons/md";
 
@@ -21,7 +21,7 @@ export async function getStaticProps({ locale }) {
 
 export const isOpen = atom(false);
 
-const Samex = () => {
+const Deliveroo = () => {
 	const [isPopUp, setIsPopUp] = useAtom(isOpen);
 
 	const handlePopupVideo = () => {
@@ -37,15 +37,13 @@ const Samex = () => {
 					className="absolute z-1"
 					layout="fill"
 					objectFit="cover"
-					src="/assets/projects/samexpage.png"
+					src="/assets/projects/deliveroo.png"
 					alt="/"
 					priority
 				/>
 				<div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-					<h2 className="py-4 text-6xl text-black text-widest">
-						Sam<span className="text-[#FDB905]">Ex</span>
-					</h2>
-					<h3 className="text-widest text-2xl">React Native</h3>
+					<h2 className="py-4 text-4xl text-[#00ccbb] text-widest">Deliveroo-Clone</h2>
+					<h3 className="text-widest text-xl">React Native (Expo)</h3>
 				</div>
 			</div>
 
@@ -54,13 +52,15 @@ const Samex = () => {
 					<p>Project</p>
 					<h2>OverView</h2>
 					<p>
-						This app was built using React Native and TypeScript in order to serve
-						currency exchange services.This app enjoys some API's and packages including
-						NavigationContainer, Bottom Tabs Navigator, react-native-camera, CameraRoll,
-						PersianDatePicker and so on ... Note: The project is still in development
-						pahse and didn't launch.Since the issue i mentioned it's Github Repo is
-						private. I also provided application flow video, you can check it out down
-						below.
+						This applicatios is a clone version of Deliveroo which is a British online
+						food delivery company.Actually, it's a semi fullstack project since enjoys a
+						Content Management System (CMS) called sanity as it's back-end. I learned and
+						coded the project along it's instructor from a tutorial on a Youtube
+						channel.In this application you can order some food from multiple food
+						delivery and manage your orders in your cart and then place your order (dummy
+						payment).At the end you can check restaurant's location you ordered from on
+						Map (google map). I also provied it's source code on GitHub and its app flow
+						video.You can check them out down below.
 					</p>
 					<div className="py-5 flex">
 						<button
@@ -73,7 +73,7 @@ const Samex = () => {
 							</div>
 						</button>
 						<a
-							href="https://github.com/Mehdi-Javadzadeh/SamEx-project-ReactNative"
+							href="https://github.com/Mehdi-Javadzadeh/deliveroo-clone"
 							target="_blank"
 							rel="noreferrer"
 						>
@@ -92,21 +92,25 @@ const Samex = () => {
 						<p className="text-center font-bold py-4">Technologies</p>
 						<div className="sm:flex sm:justify-around md:flex md:flex-col grid grid-cols-3 gap-1 sm:gap-2 lg:ml-10">
 							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#FDB905" className="mr-2" />
-								React Native
+								<RiRadioButtonFill size={12} color="#00ccbb" className="mr-2" />
+								React Native(Expo)
 							</p>
 
 							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#FDB905" className="mr-2" />
+								<RiRadioButtonFill size={12} color="#00ccbb" className="mr-2" />
 								Javascript
 							</p>
 							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#FDB905" className="mr-2" />
-								TypeScript
+								<RiRadioButtonFill size={12} color="#00ccbb" className="mr-2" />
+								Redux
 							</p>
 							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#FDB905" className="mr-2" />
-								CSS (StyleSheet)
+								<RiRadioButtonFill size={12} color="#00ccbb" className="mr-2" />
+								Taliwind CSS
+							</p>
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#00ccbb" className="mr-2" />
+								Snity(CMS)
 							</p>
 						</div>
 					</div>
@@ -120,9 +124,9 @@ const Samex = () => {
 					</div>
 				</Link>
 			</div>
-			<PopupVideo />
+			<PopupVideoDeliveroo />
 		</div>
 	);
 };
 
-export default Samex;
+export default Deliveroo;
