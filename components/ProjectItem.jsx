@@ -16,7 +16,7 @@ const ProjectItem = ({
 	const { t } = useTranslation();
 	return (
 		<div
-			className={`relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group  hover:bg-gradient-to-r ${bgColor1} ${bgColor2}`}
+			className={`relative flex items-center justify-center w-full h-auto shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r ${bgColor1} ${bgColor2}`}
 		>
 			<Image
 				className="rounded-xl group-hover:opacity-10 ease-in duration-500"
@@ -34,7 +34,7 @@ const ProjectItem = ({
 				</p>
 
 				<Link href={projectUrl}>
-					<p className="text-center px-6 py-3 rounded-lg bg-gray-200 font-bold text-base cursor-pointer">
+					<p className="text-center px-5 py-3 rounded-lg bg-gray-200 font-bold text-base cursor-pointer">
 						{t("home:moreInfo")}
 					</p>
 				</Link>
@@ -44,7 +44,3 @@ const ProjectItem = ({
 };
 
 export default ProjectItem;
-
-// hidden group-hover:block
-
-// className="opacity-0 group-hover:opacity-100 ease-in duration-700 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"

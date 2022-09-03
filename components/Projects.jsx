@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import React from "react";
 import ProjectItem from "./ProjectItem";
-import deliverooImg from "../public/assets/projects/deliveroo.png";
+import deliverooImg from "../public/assets/projects/deli.jpg";
 import netflixImg from "../public/assets/projects/netflix.jpg";
 import twitchImg from "../public/assets/projects/twitch.jpg";
 import samexImg from "../public/assets/projects/samex.png";
@@ -20,7 +20,7 @@ const Projects = () => {
 				<h2 dir="auto" className="py-8">
 					{t("home:WhatBuilt")}
 				</h2>
-				<div className="grid md:grid-cols-2 gap-8">
+				<div className="grid md:grid-cols-2 gap-8 grid-cols-1">
 					<ProjectItem
 						title="SamEx"
 						officialTitle="Official Project"
@@ -38,8 +38,8 @@ const Projects = () => {
 						}
 					/>
 					<ProjectItem
-						title="Deliveroo-Clone"
-						Technology="React Native(Expo)"
+						title="Deliveroo"
+						Technology="React Native"
 						backgroundImage={deliverooImg}
 						projectUrl="/deliveroo"
 						bgColor1={"from-[#00ccbb]"}
