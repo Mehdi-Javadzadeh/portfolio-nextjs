@@ -25,5 +25,13 @@
 	"front": "Front End Developer",
 	"letsTalk": "I am available for remote or in person positions. Contact me and let's talk",
 	"moreInfo": "More Info",
-	"back": "BACK"
+	"back": "BACK",
+	"project": "Project",
+	"overView": "OverView",
+	"appFlow": "APP FLOW",
+	"gitHub": "GitHub",
+	"appFlowVideo": "Application Flow Video",
+	"deliveroo": "This application is a clone version of Deliveroo which is a British online food delivery company.Actually, it's a semi fullstack project since enjoys a Content Management System (CMS) called sanity as it's back-end. I learned and coded the project along it's instructor from a tutorial on a Youtube channel.In this application you can order some food from multiple food delivery and manage your orders in your cart and then place your order (dummy payment).At the end you can check restaurant's location you ordered from on Map (google map). I also provied it's source code on GitHub and its app flow video.You can check them out down below.",
+	"samex": "This app was built using React Native and TypeScript in order to serve currency exchange services.This app enjoys some API's and packages including NavigationContainer, Bottom Tabs Navigator, react-native-camera, CameraRoll, PersianDatePicker and so on ... Note: The project is still in development pahse and didn't launch.Since the issue i mentioned it's Github Repo is private. I also provided application flow video, you can check it out down below.",
+	"hulu": "This application is a clone version of Hulu which is an American subscription streaming service.Actually, it's a semi fullstack project since enjoys The Movie Database API (TMDB) as it's database. I learned and coded the project along it's instructor from a tutorial on a Youtube channel.In this application you can have movies with different categories along with using lazy loading technology in next.js. It's user interface made with css grid and flex using taliwind css. I also provied it's source code on GitHub and its app flow video.You can check them out down below."
 }

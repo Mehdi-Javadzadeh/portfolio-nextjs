@@ -37,7 +37,7 @@ const Deliveroo = () => {
 					className="absolute z-1"
 					layout="fill"
 					objectFit="cover"
-					src="/assets/projects/deliveroo.png"
+					src="/assets/projects/deli2.jpg"
 					alt="/"
 					priority
 				/>
@@ -49,25 +49,19 @@ const Deliveroo = () => {
 
 			<div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8">
 				<div className="col-span-4">
-					<p>Project</p>
-					<h2>OverView</h2>
-					<p>
-						This applicatios is a clone version of Deliveroo which is a British online
-						food delivery company.Actually, it's a semi fullstack project since enjoys a
-						Content Management System (CMS) called sanity as it's back-end. I learned and
-						coded the project along it's instructor from a tutorial on a Youtube
-						channel.In this application you can order some food from multiple food
-						delivery and manage your orders in your cart and then place your order (dummy
-						payment).At the end you can check restaurant's location you ordered from on
-						Map (google map). I also provied it's source code on GitHub and its app flow
-						video.You can check them out down below.
+					<p dir="auto">{t("home:project")}</p>
+					<h3 dir="auto" className="py-6 text-lg">
+						{t("home:overView")}
+					</h3>
+					<p className="text-justify" dir="auto">
+						{t("home:deliveroo")}
 					</p>
 					<div className="py-5 flex">
 						<button
 							onClick={handlePopupVideo}
 							className="w-max px-4 py-2 mt-4 mr-8 bg-gradient-to-r from-gray-700 to-gray-500 flex items-center space-x-2"
 						>
-							<p className="text-center">App Flow</p>
+							<p className="text-center">{t("home:appFlow")}</p>
 							<div>
 								<MdSlowMotionVideo size={24} />
 							</div>
@@ -78,7 +72,7 @@ const Deliveroo = () => {
 							rel="noreferrer"
 						>
 							<button className="w-max px-3 py-2 mt-4 bg-gradient-to-r from-gray-700 to-gray-500 flex items-center space-x-2 text-center">
-								<p className="text-center">GitHub</p>
+								<p className="text-center">{t("home:gitHub")}</p>
 								<div>
 									<FaGithub size={22} />
 								</div>

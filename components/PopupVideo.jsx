@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAtom } from "jotai";
 import { isOpen } from "../pages/samex";
+import { useTranslation } from "next-i18next";
 
 const PopupVideo = () => {
 	const [isPopUp, setIsPopUp] = useAtom(isOpen);
@@ -9,6 +10,7 @@ const PopupVideo = () => {
 	const handleClose = () => {
 		setIsPopUp(!isPopUp);
 	};
+	const { t } = useTranslation();
 	return (
 		<div
 			className={
@@ -24,7 +26,9 @@ const PopupVideo = () => {
 			>
 				<div className="w-full h-full flex flex-col items-center justify-center relative gap-5">
 					<div className="w-full flex items-center justify-between pl-10">
-						<p className="text-base">Application Flow Video:</p>
+						<p dir="auto" className="text-base">
+							{t("home:appFlowVideo")}
+						</p>
 						<div className="cursor-pointer p-2 bg-[#FDB905]/60 rounded-full ease-in duration-300">
 							<AiOutlineClose onClick={handleClose} size={30} color="#fff" />
 						</div>

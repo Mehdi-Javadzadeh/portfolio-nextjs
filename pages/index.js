@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import Head from "next/head";
-import Image from "next/image";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import NavBar from "../components/NavBar";
 import Main from "../components/Main";
 import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 // Multilingual Config
 export async function getStaticProps({ locale }) {
@@ -21,6 +21,14 @@ export async function getStaticProps({ locale }) {
 
 export default function Home() {
 	const { t } = useTranslation();
+
+	const myRouter = useRouter();
+
+	useEffect(() => {
+		if (myRouter.asPath === "/fa/en") {
+			myRouter.push("/");
+		}
+	}, [myRouter]);
 	return (
 		<div>
 			<Head>

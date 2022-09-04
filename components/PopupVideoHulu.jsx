@@ -1,10 +1,10 @@
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAtom } from "jotai";
-import { isOpen } from "../pages/deliveroo";
+import { isOpen } from "../pages/hulu";
 import { useTranslation } from "next-i18next";
 
-const PopupVideo = () => {
+const PopupVideoHulu = () => {
 	const [isPopUp, setIsPopUp] = useAtom(isOpen);
 
 	const handleClose = () => {
@@ -30,7 +30,7 @@ const PopupVideo = () => {
 						<p dir="auto" className="text-base">
 							{t("home:appFlowVideo")}
 						</p>
-						<div className="cursor-pointer p-2 bg-[#00ccbb]/60 rounded-full ease-in duration-300">
+						<div className="cursor-pointer p-2 bg-[#60d175]/60 rounded-full ease-in duration-300">
 							<AiOutlineClose onClick={handleClose} size={30} color="#fff" />
 						</div>
 					</div>
@@ -38,7 +38,7 @@ const PopupVideo = () => {
 						{isPopUp ? (
 							<iframe
 								className="w-full rounded-xl h-[450px]"
-								src="https://www.aparat.com/video/video/embed/videohash/ErS6x/vt/frame?startTime=0"
+								src="https://www.aparat.com/video/video/embed/videohash/YvMzR/vt/frame?startTime=0"
 								allowFullScreen={true}
 								webkitallowfullscreen="true"
 								mozallowfullscreen="true"
@@ -59,4 +59,4 @@ const PopupVideo = () => {
 	);
 };
 
-export default PopupVideo;
+export default PopupVideoHulu;

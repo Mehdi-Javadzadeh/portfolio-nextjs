@@ -4,7 +4,7 @@ import { useTranslation } from "next-i18next";
 import React from "react";
 import ProjectItem from "./ProjectItem";
 import deliverooImg from "../public/assets/projects/deli.jpg";
-import netflixImg from "../public/assets/projects/netflix.jpg";
+import huluImg from "../public/assets/projects/hulu.jpg";
 import twitchImg from "../public/assets/projects/twitch.jpg";
 import samexImg from "../public/assets/projects/samex.png";
 import { ImStarFull } from "react-icons/im";
@@ -46,12 +46,12 @@ const Projects = () => {
 						bgColor2={"to-[#91c7c2]"}
 					/>
 					<ProjectItem
-						title="Netflix"
-						Technology="React Native"
-						backgroundImage={netflixImg}
-						projectUrl="/netflix"
-						bgColor1={"from-[#FDB905]"}
-						bgColor2={"to-[#ffe18f]"}
+						title="Hulu"
+						Technology="Next.js"
+						backgroundImage={huluImg}
+						projectUrl="/hulu"
+						bgColor1={"from-[#60d175]"}
+						bgColor2={"to-[#94d6a0]"}
 					/>
 					<ProjectItem
 						Technology="React Native"

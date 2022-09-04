@@ -40,7 +40,7 @@ const NavBar = () => {
 		if (
 			myRouter.asPath === "/samex" ||
 			myRouter.asPath === "/deliveroo" ||
-			myRouter.asPath === "/netflix" ||
+			myRouter.asPath === "/hulu" ||
 			myRouter.asPath === "/twitch"
 		) {
 			setNavBg("rgba(000, 000, 000, 0.5)");
@@ -60,6 +60,10 @@ const NavBar = () => {
 			setHoverBg("hover:bg-[#FDB905]");
 		} else if (myRouter.asPath === "/deliveroo") {
 			setHoverBg("hover:bg-[#00ccbb]");
+		} else if (myRouter.asPath === "/hulu") {
+			setHoverBg("hover:bg-[#60d175]");
+		} else {
+			setHoverBg("hover:bg-[#60a5fa]");
 		}
 	}, [myRouter]);
 
