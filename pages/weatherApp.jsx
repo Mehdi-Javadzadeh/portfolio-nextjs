@@ -6,9 +6,9 @@ import { useTranslation } from "next-i18next";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { IoMdArrowBack } from "react-icons/io";
 import { atom, useAtom } from "jotai";
-import PopupVideoHulu from "../components/PopupVideoHulu";
 import { FaGithub } from "react-icons/fa";
 import { MdSlowMotionVideo } from "react-icons/md";
+import PopupVideoWeather from "../components/PopupVideoWeather";
 
 // Multilingual Config
 export async function getStaticProps({ locale }) {
@@ -21,7 +21,7 @@ export async function getStaticProps({ locale }) {
 
 export const isOpen = atom(false);
 
-const Hulu = () => {
+const WeatherApp = () => {
 	const [isPopUp, setIsPopUp] = useAtom(isOpen);
 
 	const handlePopupVideo = () => {
@@ -37,13 +37,13 @@ const Hulu = () => {
 					className="absolute z-1"
 					layout="fill"
 					objectFit="cover"
-					src="/assets/projects/hulu2.jpg"
+					src="/assets/projects/weather.jpg"
 					alt="/"
 					priority
 				/>
 				<div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-					<h2 className="py-4 text-4xl text-[#60d175] text-widest">Hulu-Clone</h2>
-					<h3 className="text-widest text-xl">Next.js</h3>
+					<h2 className="py-4 text-4xl text-[#80d1c1] text-widest">Weather-App</h2>
+					<h3 className="text-widest text-xl">React.js</h3>
 				</div>
 			</div>
 
@@ -54,7 +54,7 @@ const Hulu = () => {
 						{t("home:overView")}
 					</h3>
 					<p className="text-justify" dir="auto">
-						{t("home:hulu")}
+						{t("home:portfolio")}
 					</p>
 					<div className="py-5 flex">
 						<button
@@ -67,7 +67,7 @@ const Hulu = () => {
 							</div>
 						</button>
 						<a
-							href="https://github.com/Mehdi-Javadzadeh/Hulu-Clone"
+							href="https://github.com/Mehdi-Javadzadeh/deliveroo-clone"
 							target="_blank"
 							rel="noreferrer"
 						>
@@ -86,25 +86,21 @@ const Hulu = () => {
 						<p className="text-center font-bold py-4">Technologies</p>
 						<div className="sm:flex sm:justify-around md:flex md:flex-col grid grid-cols-3 gap-1 sm:gap-2 lg:ml-10">
 							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#60d175" className="mr-2" />
+								<RiRadioButtonFill size={12} color="#80d1c1" className="mr-2" />
 								Next js
 							</p>
 
 							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#60d175" className="mr-2" />
+								<RiRadioButtonFill size={12} color="#80d1c1" className="mr-2" />
 								Javascript
 							</p>
 							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#60d175" className="mr-2" />
+								<RiRadioButtonFill size={12} color="#80d1c1" className="mr-2" />
+								React
+							</p>
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#80d1c1" className="mr-2" />
 								Taliwind CSS
-							</p>
-							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#60d175" className="mr-2" />
-								HeroIcons
-							</p>
-							<p className="text-gray-600 py-2 flex items-center text-sm">
-								<RiRadioButtonFill size={12} color="#60d175" className="mr-2" />
-								Rest API (TMDB)
 							</p>
 						</div>
 					</div>
@@ -118,9 +114,9 @@ const Hulu = () => {
 					</div>
 				</Link>
 			</div>
-			<PopupVideoHulu />
+			<PopupVideoWeather />
 		</div>
 	);
 };
 
-export default Hulu;
+export default WeatherApp;

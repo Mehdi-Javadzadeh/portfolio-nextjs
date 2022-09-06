@@ -5,8 +5,10 @@ import React from "react";
 import ProjectItem from "./ProjectItem";
 import deliverooImg from "../public/assets/projects/deli.jpg";
 import huluImg from "../public/assets/projects/hulu.jpg";
-import twitchImg from "../public/assets/projects/twitch.jpg";
+import portfolioImg from "../public/assets/projects/portfolio.jpg";
 import samexImg from "../public/assets/projects/samex.png";
+import weatherImg from "../public/assets/projects/weather.jpg";
+import restaurantImg from "../public/assets/projects/restaurant.jpg";
 import { ImStarFull } from "react-icons/im";
 
 const Projects = () => {
@@ -27,8 +29,8 @@ const Projects = () => {
 						Technology="React Native"
 						backgroundImage={samexImg}
 						projectUrl="/samex"
-						bgColor1={"from-[#FDB905]"}
-						bgColor2={"to-[#ffe18f]"}
+						bgColor1={"from-[#fcce53]"}
+						bgColor2={"to-[#fce6a9]"}
 						icon={
 							<ImStarFull
 								className="p-2 rounded-full bg-white w-full"
@@ -54,12 +56,28 @@ const Projects = () => {
 						bgColor2={"to-[#94d6a0]"}
 					/>
 					<ProjectItem
-						Technology="React Native"
-						title="Twitch"
-						backgroundImage={twitchImg}
-						projectUrl="/twitch"
-						bgColor1={"from-[#FDB905]"}
-						bgColor2={"to-[#ffe18f]"}
+						title="Protfolio"
+						Technology="Next.js"
+						backgroundImage={portfolioImg}
+						projectUrl="/portfolio"
+						bgColor1={"from-[#60a5fa]"}
+						bgColor2={"to-[#adcef7]"}
+					/>
+					<ProjectItem
+						title="Weather App"
+						Technology="React.js"
+						backgroundImage={weatherImg}
+						projectUrl="/weatherApp"
+						bgColor1={"from-[#80d1c1]"}
+						bgColor2={"to-[#7b9c95]"}
+					/>
+					<ProjectItem
+						title="Restaurant UI"
+						Technology="React.js"
+						backgroundImage={restaurantImg}
+						projectUrl="/restaurantUI"
+						bgColor1={"from-[#fca86f]"}
+						bgColor2={"to-[#fccdae]"}
 					/>
 				</div>
 			</div>
