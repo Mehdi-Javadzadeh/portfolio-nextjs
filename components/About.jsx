@@ -10,11 +10,10 @@ const About = () => {
 		<div id="about" className="w-full md:h-screen p-2 flex items-center py-16">
 			<div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8 ">
 				<div dir="auto" className="col-span-2">
-					<p className="uppercase text-xl tracking-wide text-[#60a5fa]">
-						{" "}
+					<p className="uppercase text-xl tracking-wide text-[#60a5fa] pt-10">
 						{t("home:aboutMe")}
 					</p>
-					<h2 className="py-8">{t("home:whoIam")}</h2>
+					<h2 className="py-6">{t("home:whoIam")}</h2>
 					<p className="py-4 text-gray-600">** {t("home:starTitle")} **</p>
 					<p>{t("home:subStarTitle")}</p>
 				</div>
