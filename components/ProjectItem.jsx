@@ -25,7 +25,7 @@ const ProjectItem = ({
 			/>
 			<div className="items-center justify-center flex flex-col opacity-0 group-hover:opacity-100 ease-in duration-500 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
 				<div>{icon}</div>
-				<h3 className="text-lg text-gray-800 tracking-wider text-center py-4">
+				<h3 className="text-lg text-gray-800 tracking-wider text-center py-2">
 					{officialTitle}
 				</h3>
 				<h3 className="text-2xl text-gray-800 tracking-wider text-center">{title}</h3>

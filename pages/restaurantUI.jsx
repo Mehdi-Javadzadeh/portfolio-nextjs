@@ -98,6 +98,14 @@ const RestaurantUI = () => {
 							</p>
 							<p className="text-gray-600 py-2 flex items-center text-sm">
 								<RiRadioButtonFill size={12} color="#fca86f" className="mr-2" />
+								HTML
+							</p>
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#fca86f" className="mr-2" />
+								CSS
+							</p>
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#fca86f" className="mr-2" />
 								Material UI
 							</p>
 							<p className="text-gray-600 py-2 flex items-center text-sm">

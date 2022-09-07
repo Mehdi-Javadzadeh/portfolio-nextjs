@@ -54,7 +54,7 @@ const WeatherApp = () => {
 						{t("home:overView")}
 					</h3>
 					<p className="text-justify" dir="auto">
-						{t("home:portfolio")}
+						{t("home:weatherApp")}
 					</p>
 					<div className="py-5 flex">
 						<button
@@ -67,7 +67,7 @@ const WeatherApp = () => {
 							</div>
 						</button>
 						<a
-							href="https://github.com/Mehdi-Javadzadeh/deliveroo-clone"
+							href="https://github.com/Mehdi-Javadzadeh/Weather-Web-App"
 							target="_blank"
 							rel="noreferrer"
 						>
@@ -87,7 +87,7 @@ const WeatherApp = () => {
 						<div className="sm:flex sm:justify-around md:flex md:flex-col grid grid-cols-3 gap-1 sm:gap-2 lg:ml-10">
 							<p className="text-gray-600 py-2 flex items-center text-sm">
 								<RiRadioButtonFill size={12} color="#80d1c1" className="mr-2" />
-								Next js
+								React.js
 							</p>
 
 							<p className="text-gray-600 py-2 flex items-center text-sm">
@@ -96,11 +96,15 @@ const WeatherApp = () => {
 							</p>
 							<p className="text-gray-600 py-2 flex items-center text-sm">
 								<RiRadioButtonFill size={12} color="#80d1c1" className="mr-2" />
-								React
+								HTML
 							</p>
 							<p className="text-gray-600 py-2 flex items-center text-sm">
 								<RiRadioButtonFill size={12} color="#80d1c1" className="mr-2" />
-								Taliwind CSS
+								CSS
+							</p>
+							<p className="text-gray-600 py-2 flex items-center text-sm">
+								<RiRadioButtonFill size={12} color="#80d1c1" className="mr-2" />
+								OpenWeather API
 							</p>
 						</div>
 					</div>

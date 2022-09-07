@@ -33,7 +33,7 @@ const Projects = () => {
 						bgColor2={"to-[#fce6a9]"}
 						icon={
 							<ImStarFull
-								className="p-2 rounded-full bg-white w-full"
+								className="p-2 rounded-full bg-white "
 								size={45}
 								color="#FDB905"
 							/>
