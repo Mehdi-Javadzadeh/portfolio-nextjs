@@ -98,7 +98,7 @@ const Skills = () => {
 								<Image src="/assets/skills/github.png" width={64} height={64} alt="/" />
 							</div>
 							<div className="flex flex-col items-center justify-center">
-								<h3>GitHub</h3>
+								<h3>Git</h3>
 							</div>
 						</div>
 					</div>
